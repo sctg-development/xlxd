@@ -1,0 +1,71 @@
+Source: xlxd
+Section: hamradio
+Priority: optional
+Maintainer: Mark Wahl <MarkWahl@gmx.de>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ libsystemd-dev,
+ libftd2xx
+Standards-Version: 4.6.2
+Homepage: https://github.com/LX3JL/xlxd
+#Vcs-Browser: https://salsa.debian.org/debian/xlxd
+#Vcs-Git: https://salsa.debian.org/debian/xlxd.git
+
+Package: xlxd
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+Description: XLX Multiprotocol Gateway Reflector Server
+ The XLX Multiprotocol Gateway Reflector Server is part
+ of the software system for the D-Star Network.
+
+Package: ambed
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ libftd2xx
+Description: AMBE Transcoding Server
+ The AMBE Transcoding Server is part
+ of the software system for the D-Star Network.
+
+Package: xlxd-dashboard
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ xlxd,
+ libapache2-mod-php,
+Description: Dashboard for XLX Server
+ Dashboard for the XLX Multiprotocol Gateway Reflector Server
+
+Package: xlxd-dashboard2
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ xlxd,
+ libapache2-mod-php,
+Description: Alternative Dashboard for XLX Server
+ Alternative Dashboard for the XLX Multiprotocol Gateway Reflector Server
+
+Package: xlxapi-update
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ xlxd,
+ wget,
+Description: Housekeeping Service for XLX Server
+ Housekeeping service for the XLX Multiprotocol Gateway Reflector Server
+
+Package: ambedwatchdog
+Architecture: any
+Depends:
+ ${shlibs:Depends},
+ ${misc:Depends},
+ ambed,
+Description: Watchdog Service for AMBE Transcoding Server
+ Watchdog Service for AMBE Transcoding Server

@@ -1,0 +1,17 @@
+[Unit]
+Description=AMBE Transcoder Daemon
+After=network.target
+Requires=network-online.target
+
+[Service]
+Type=notify
+User=root
+Group=root
+EnvironmentFile=-/etc/default/ambed
+ExecStartPre=-/sbin/rmmod ftdi_sio
+ExecStartPre=-/sbin/rmmod usb_serial
+ExecStart=/usr/sbin/ambed $AMBED_IP
+Restart=on-abnormal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+usr/share/xlxd-dashboard
+etc/xlxd-dashboard/config.inc.php
+etc/xlxd-dashboard/layout.css
+etc/apache2/sites-available/xlxd-dashboard.conf

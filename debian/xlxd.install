@@ -1,0 +1,9 @@
+usr/sbin/xlxd
+etc/xlxd/xlxd.blacklist
+etc/xlxd/xlxd.interlink
+etc/xlxd/xlxd.terminal
+etc/xlxd/xlxd.transcoder
+etc/xlxd/xlxd.whitelist
+etc/xlxd/xlxd.config
+var/log/xlxd
+var/lib/xlxd

@@ -1,0 +1,3 @@
+usr/share/xlxd-dashboard2
+etc/xlxd-dashboard2/config.inc.php
+etc/apache2/sites-available/xlxd-dashboard2.conf
