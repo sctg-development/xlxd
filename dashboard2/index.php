@@ -176,10 +176,14 @@ if ($CallingHome['Active']) {
                         )</a></li>
                 <li<?php echo ($_GET['show'] == "peers") ? ' class="active"' : ''; ?>><a href="./index.php?show=peers">Peers
                         (<?php echo $Reflector->PeerCount(); ?>)</a></li>
+                <li<?php echo ($_GET['show'] == "modules") ? ' class="active"' : ''; ?>><a
+                            href="./index.php?show=modules">Modules list</a></li>
                 <li<?php echo ($_GET['show'] == "reflectors") ? ' class="active"' : ''; ?>><a
                             href="./index.php?show=reflectors">Reflectorlist</a></li>
                 <li<?php echo ($_GET['show'] == "liveircddb") ? ' class="active"' : ''; ?>><a
                             href="./index.php?show=liveircddb">D-Star live</a></li>
+                <li<?php echo ($_GET['show'] == "traffic") ? ' class="active"' : ''; ?>><a
+                            href="./index.php?show=traffic">Traffic statistics</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -204,11 +208,17 @@ if ($CallingHome['Active']) {
                 case 'liveircddb' :
                     require_once("./pgs/liveircddb.php");
                     break;
-                case 'peers'      :
+                case 'peers' :
                     require_once("./pgs/peers.php");
+                    break;
+                case 'modules'    :
+                    require_once("./pgs/modules.php");
                     break;
                 case 'reflectors' :
                     require_once("./pgs/reflectors.php");
+                    break;
+                case 'traffic'    :
+                    require_once("./pgs/traffic.php");
                     break;
                 default           :
                     require_once("./pgs/users.php");

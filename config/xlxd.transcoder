@@ -17,5 +17,5 @@
 
 Address 127.0.0.1
 ListenAddr 0.0.0.0
-ModulesOn ABCD
-ModulesAuto *
+ModulesOn 
+ModulesAuto 

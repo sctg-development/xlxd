@@ -115,7 +115,14 @@ int main(int argc, char **argv)
             buf[9] = 2;
             buf[10] = 5;
             buf[11] = 0;
-            memset(&buf[13], 0, 25);
+            // Keep the modules from position 12 - don't erase them!
+            // The modules are already in buf[12] from the received connect packet
+            // Only clear from position 13 + strlen(modules) to the end
+            int modules_len = strlen((char *)&buf[12]);
+            if (modules_len < 26)
+            {
+                memset(&buf[12 + modules_len + 1], 0, 26 - modules_len);
+            }
             buf[38] = 0x00;
             sendto(sockfd, buf, 39, 0, (const struct sockaddr *)&rx, sizeof(rx));
 #ifdef DEBUG_SEND

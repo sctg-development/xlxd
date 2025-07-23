@@ -22,6 +22,8 @@ COPY --from=builder /xlxd/src/dashboard2/ /var/www/html/
 COPY --from=builder /xlxd/src/dashboard/ /var/www/html/dashboard/
 # Copier la configuration Supervisor
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY log_forwarder.sh /usr/local/bin/log_forwarder.sh
+RUN chmod +x /usr/local/bin/log_forwarder.sh
 
 # Créer les répertoires de logs
 RUN mkdir -p /var/log/supervisor && \
