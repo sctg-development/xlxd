@@ -109,8 +109,8 @@ int main(int argc, char **argv)
         }
 #endif
         if ((rxlen == 39) && (buf[0] == 'L'))
-        { // connect
-            buf[0] = 'A';
+        {                 // connect
+            buf[0] = 'A'; // Réponse ACK
             memcpy(&buf[1], peername, 8);
             buf[9] = 2;
             buf[10] = 5;

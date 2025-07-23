@@ -65,7 +65,7 @@
 
 // reflector ---------------------------------------------------
 
-#define NB_OF_MODULES 10
+#define NB_OF_MODULES 26
 // #define NB_OF_MODULES                   NB_MODULES_MAX
 
 // protocols ---------------------------------------------------
